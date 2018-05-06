@@ -27,8 +27,8 @@ def plotNormalDist(mean, coVar):
 def getCoVar(X):
     return np.linalg.inv(np.dot(X.T,X) + np.identity(2))
 
-def getMean(sigma, X,T):
-    return np.array(np.dot(sigma, np.dot(X.T,T))).reshape(-1)
+def getMean(coVar, X,T):
+    return np.array(np.dot(coVar, np.dot(X.T,T))).reshape(-1)
 
 def calculateNewParams(x,t,sigma):
 	#newCoVar = np.linalg.inv(np.dot(x.T,x) + np.identity(2))
